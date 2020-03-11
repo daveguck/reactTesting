@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, cleanup, waitForElement } from '@testing-library/react';
-import MovieDetail from './MovieDetail';
-import { BACKDROP_PATH, POSTER_PATH } from './MovieDetail';
+import MovieDetail from '../movies/MovieDetail';
+import { POSTER_PATH } from '../movies/MovieDetail';
 
 global.fetch = require('jest-fetch-mock');
 
@@ -32,8 +32,6 @@ test('<MovieDetail />', async () => {
   const { debug, getByTestId } = render(<MovieDetail match={match} />);
 
   await waitForElement(() => getByTestId('movie-title'));
-
-  debug();
 
   expect(getByTestId('movie-title').textContent).toBe(movie.title);
   // expect(getByTestId('backdrop').getAttribute('backdrop')).toBe(

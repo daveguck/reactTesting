@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, cleanup, fireEvent } from '@testing-library/react';
-import MovieForm from './MovieForm';
+import MovieForm from '../movies/MovieForm';
 
 afterEach(cleanup);
 
